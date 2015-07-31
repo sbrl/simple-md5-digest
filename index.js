@@ -75,7 +75,6 @@ function get_id(length)
 function parse_challenge(challenge)
 {
 	var parts = {};
-	
 	challenge.split(",").forEach(function(str) {
 		var str_split = str.split("=");
 		if(str_split[1].substring(0, 1) == `"`) str_split[1] = str_split[1].substring(1);
@@ -110,7 +109,7 @@ function calculate_response(c_parts, user, pass, resource)
 	response += `cnonce="${cnonce}",nc=00000001,qop=auth,`;
 	response += `digest-uri="${digest_uri}",charset=utf-8,`;
 
-	var x = `${user}:${c_parts.realm}:${password}`,
+	var x = `${user}:${c_parts.realm}:${pass}`,
 		y = md5(x, "binary"),
 		a1 = `${y}:${c_parts.nonce}:${cnonce}`;
 	

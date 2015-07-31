@@ -63,7 +63,7 @@ The following functions are also available for use if you need finer control ove
  - `digest_md5.set_service(service_name)` - Sets the serivce that you are authenticating with.
  - `digest_md5.parse_challenge(challange_str)` - Parses a given challange string into its component parts.
  - `digest_md5.get_response_raw(parsed_challenge, user, pass, resource)` - Calculates a response to a challenge string parsed with the above function.
- - `md5(thing, encoding)` - Calculates the md5 hash of something. Usually that something will be a string. Encoding is set to "hex" by default, but you can change it to "binary" or anything else you like that `crypto`'s `createHash()` `toString()` supports.
+ - `md5(thing, encoding)` - Calculates the md5 hash of something. Usually that something will be a string. Encoding is set to "hex" by default, but you can change it to "binary" or anything else you like that `crypto`'s `createHash("md5").digest()` supports.
 
 If the above explanations don't make sense, simply read the source code located in `index.js` - the functions are extensively documented there. If that still doesn't help, contact me and I will try and help you :)
 

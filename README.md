@@ -67,6 +67,10 @@ The following functions are also available for use if you need finer control ove
 
 If the above explanations don't make sense, simply read the source code located in `index.js` - the functions are extensively documented there. If that still doesn't help, contact me and I will try and help you :)
 
+Bugs & Support
+----
+You can report bugs and / or get help on the [GitHub Issue Tracker](https://github.com/sbrl/simple-md5-digest/issues). I can also be contacted by email.
+
 Credits
 -------
  - This webpage was used to implement this module: [A crash course in SASL and DIGEST-MD5 for XMPP](http://web.archive.org/web/20050224191820/http://cataclysm.cx/wip/digest-md5-crash.html) by Robert Norris

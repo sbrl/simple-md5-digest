@@ -168,5 +168,7 @@ module.exports = {
 	base64_encode: base64_encode,
 	base64_decode: base64_decode,
 	
+	md5: md5,
+	
 	set_service: set_service
 };

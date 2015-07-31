@@ -37,7 +37,7 @@ socket.on("data", function(data) {
 
 ```
 
-**Warning: Some server's don't actually support an `authzid` when using DIGEST_MD5! (e.g. prosody). If this the case, omit the `resource` parameter:
+**Warning: Some server's don't actually support an `authzid` when using DIGEST_MD5! (e.g. prosody). If this the case, omit the `resource` parameter:**
 
 ```javascript
 var ch_response = md5_digest.get_response(challenge, "username", "password");
@@ -52,6 +52,22 @@ digest_md5.set_service("service_name_here");
 ```
 
 If you have got a challenge encoded as base64, simply use `md5_digest.get_response_b64` instead and it will decode the response first.
+
+Using this with XMPP
+--------------------
+
+If you are using this with XMPP, I recommend you read [this page](http://web.archive.org/web/20050224191820/http://cataclysm.cx/wip/digest-md5-crash.html), which gives to a sample exchange. For convenience, I will include the sample exchange here:
+
+```
+1 >>> <auth xmlns='urn:ietf:params:xml:ns:xmpp-sasl' mechanism='DIGEST-MD5'/>
+1 <<< <challenge xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>cmVhbG09ImNhdGFjbHlzbS5jeCIsbm9uY2U9Ik9BNk1HOXRFUUdtMmhoIixxb3A9ImF1dGgiLGNoYXJzZXQ9dXRmLTgsYWxnb3JpdGhtPW1kNS1zZXNz</challenge>
+2 >>> <response xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>dXNlcm5hbWU9InJvYiIscmVhbG09ImNhdGFjbHlzbS5jeCIsbm9uY2U9Ik9BNk1HOXRFUUdtMmhoIixjbm9uY2U9Ik9BNk1IWGg2VnFUclJrIixuYz0wMDAwMDAwMSxxb3A9YXV0aCxkaWdlc3QtdXJpPSJ4bXBwL2NhdGFjbHlzbS5jeCIscmVzcG9uc2U9ZDM4OGRhZDkwZDRiYmQ3NjBhMTUyMzIxZjIxNDNhZjcsY2hhcnNldD11dGYtOCxhdXRoemlkPSJyb2JAY2F0YWNseXNtLmN4L215UmVzb3VyY2Ui</response>
+2 <<< <challenge xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>cnNwYXV0aD1lYTQwZjYwMzM1YzQyN2I1NTI3Yjg0ZGJhYmNkZmZmZA==</challenge>
+3 >>> <response xmlns='urn:ietf:params:xml:ns:xmpp-sasl'/>
+3 <<< <success xmlns='urn:ietf:params:xml:ns:xmpp-sasl'/>
+```
+
+The 2nd message that you send is the base64 encoded result from `digest_md5.get_response()`.
 
 Advanced Usage
 --------------

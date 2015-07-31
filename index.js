@@ -42,7 +42,7 @@ function base64_decode(thing)
 function md5(thing, encoding)
 {
 	if(typeof encoding != "string") encoding = "hex";
-	return crypto.createHash("md5")
+	return crypto.createHash("md5").update(thing).digest(encoding);
 }
 
 /*
@@ -97,6 +97,11 @@ function parse_challenge(challenge)
  */
 function calculate_response(c_parts, user, pass, resource)
 {
+	if(typeof user != "string")
+		throw new Error(`Invalid user: ${user}. Expecting string.`);
+	if(typeof pass != "string")
+		throw new Error(`Invalid pass: ${pass}. Expecting string.`);
+	
 	if(typeof resource != "string") resource = false;
 	
 	var response = "";

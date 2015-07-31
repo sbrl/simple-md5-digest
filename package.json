@@ -1,6 +1,6 @@
 {
   "name": "simple-digest-md5",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple pure-js implementation of DIGEST-MD5. Written for XMPP, but can be used elsewhere.",
   "main": "index.js",
   "scripts": {

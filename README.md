@@ -56,7 +56,7 @@ If you have got a challenge encoded as base64, simply use `md5_digest.get_respon
 Using this with XMPP
 --------------------
 
-If you are using this with XMPP, I recommend you read [this page](http://web.archive.org/web/20050224191820/http://cataclysm.cx/wip/digest-md5-crash.html), which gives to a sample exchange. For convenience, I will include the sample exchange here:
+If you are using this with XMPP, I recommend you read [this page](http://web.archive.org/web/20050224191820/http://cataclysm.cx/wip/digest-md5-crash.html), which walks you through the proecss and gives you a sample exchange. For convenience, I will include the sample exchange here:
 
 ```
 1 >>> <auth xmlns='urn:ietf:params:xml:ns:xmpp-sasl' mechanism='DIGEST-MD5'/>

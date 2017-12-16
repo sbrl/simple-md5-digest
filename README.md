@@ -2,6 +2,10 @@ simple-digest-md5
 =================
 This module implements DIGEST-MD5 in pure javascript. I didn't see any other implementations in pure JS here on npm, so when I wrote one I thought that I would put it up here - hopefully this helps somebody.
 
+[![NPM](https://nodei.co/npm/simple-digest-md5.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/simple-digest-md5/)
+[![NPM](https://nodei.co/npm-dl/simple-digest-md5.png?months=9&height=3)](https://nodei.co/npm/simple-digest-md5/)
+
+
 Installation
 ------------
 
